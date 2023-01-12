@@ -1,0 +1,21 @@
+
+/* Class = "UILabel"; text = "맑음"; ObjectID = "HFd-pw-Rm7"; */
+"HFd-pw-Rm7.text" = "맑음";
+
+/* Class = "UILabel"; text = "서울"; ObjectID = "Kbo-tx-2CC"; */
+"Kbo-tx-2CC.text" = "서울";
+
+/* Class = "UIButton"; configuration.title = "날씨 가져오기"; ObjectID = "PkT-cw-qvb"; */
+"PkT-cw-qvb.configuration.title" = "날씨 가져오기";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "PkT-cw-qvb"; */
+"PkT-cw-qvb.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "23℃"; ObjectID = "S0d-Ee-aLj"; */
+"S0d-Ee-aLj.text" = "23℃";
+
+/* Class = "UILabel"; text = "최고: 30℃"; ObjectID = "WEC-VP-Aas"; */
+"WEC-VP-Aas.text" = "최고: 30℃";
+
+/* Class = "UILabel"; text = "최저: 21℃"; ObjectID = "iie-fE-W5q"; */
+"iie-fE-W5q.text" = "최저: 21℃";
