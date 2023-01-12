@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4ly-U4-w0w">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LEDBoard" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LKc-4C-1GQ">
+                                <rect key="frame" x="10" y="191" width="370" height="519"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                                <color key="textColor" systemColor="systemYellowColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="LKc-4C-1GQ" secondAttribute="bottom" constant="100" id="9xm-vp-DdH"/>
+                            <constraint firstItem="LKc-4C-1GQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DZs-dW-gHB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LKc-4C-1GQ" secondAttribute="trailing" constant="10" id="KCQ-to-h6r"/>
+                            <constraint firstItem="LKc-4C-1GQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="ZMf-8y-XSG"/>
+                            <constraint firstItem="LKc-4C-1GQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="iXs-Qm-4fP"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="kOl-Sn-cIV" appends="YES" id="FBf-Fa-Ln2"/>
+                            <outletCollection property="gestureRecognizers" destination="amj-cx-Au0" appends="YES" id="HJR-Oj-bCr"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" id="QUV-fw-dm5">
+                        <barButtonItem key="rightBarButtonItem" title="설정" id="JGK-QT-iDT">
+                            <connections>
+                                <segue destination="7NJ-Lf-DFc" kind="show" id="ljZ-Du-gJh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="ledTextLabel" destination="LKc-4C-1GQ" id="BlS-8Q-rUr"/>
+                        <outlet property="viewLongPressGesture" destination="kOl-Sn-cIV" id="OJu-zR-Pan"/>
+                        <outlet property="viewTapGesture" destination="amj-cx-Au0" id="B4e-L9-g6x"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="kOl-Sn-cIV"/>
+                <tapGestureRecognizer id="amj-cx-Au0"/>
+            </objects>
+            <point key="canvasLocation" x="127" y="4"/>
+        </scene>
+        <!--설정-->
+        <scene sceneID="JyB-kz-jyn">
+            <objects>
+                <viewController id="7NJ-Lf-DFc" customClass="SettingLEDViewController" customModule="LEDBoard" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XxN-Q6-tev">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="6aK-jY-pQz">
+                                <rect key="frame" x="24" y="115" width="342" height="69.333333333333314"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="전광판에 표시할 글자" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pUo-qc-e4D">
+                                        <rect key="frame" x="0.0" y="0.0" width="342" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="전광판에 어떤 내용을 보여줄까요?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SkK-Y1-Y4H">
+                                        <rect key="frame" x="0.0" y="35.333333333333343" width="342" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="pUo-qc-e4D" secondAttribute="trailing" id="2Wh-JY-8zr"/>
+                                    <constraint firstItem="SkK-Y1-Y4H" firstAttribute="leading" secondItem="6aK-jY-pQz" secondAttribute="leading" id="L8b-Zy-2cj"/>
+                                    <constraint firstAttribute="trailing" secondItem="SkK-Y1-Y4H" secondAttribute="trailing" id="NFf-ag-mM4"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="WRT-DL-372">
+                                <rect key="frame" x="149" y="224.33333333333334" width="92.333333333333314" height="63.333333333333343"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="글자의 배경색" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="liz-VP-um7">
+                                        <rect key="frame" x="0.0" y="0.0" width="92.333333333333329" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <colorWell contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="kCb-OT-Wgi">
+                                        <rect key="frame" x="32" y="35.333333333333343" width="28" height="28"/>
+                                    </colorWell>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="31O-28-ohE">
+                                <rect key="frame" x="141.33333333333334" y="327.66666666666669" width="107.33333333333334" height="63.333333333333314"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="전광판의 배경색" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Py3-Kg-mAB">
+                                        <rect key="frame" x="0.0" y="0.0" width="107.33333333333333" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <colorWell contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="mSM-FX-foM">
+                                        <rect key="frame" x="39.666666666666657" y="35.333333333333314" width="28" height="28"/>
+                                    </colorWell>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cYy-zN-M5P">
+                                <rect key="frame" x="168.33333333333334" y="436" width="53.666666666666657" height="34.333333333333314"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="저장"/>
+                                <connections>
+                                    <action selector="saveBtnDidTap:" destination="7NJ-Lf-DFc" eventType="touchUpInside" id="j3L-Rh-zjK"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="WvN-cP-N8P"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cYy-zN-M5P" firstAttribute="top" secondItem="31O-28-ohE" secondAttribute="bottom" constant="45" id="5gi-R4-oZn"/>
+                            <constraint firstItem="WvN-cP-N8P" firstAttribute="trailing" secondItem="6aK-jY-pQz" secondAttribute="trailing" constant="24" id="6eN-7n-xkf"/>
+                            <constraint firstItem="6aK-jY-pQz" firstAttribute="top" secondItem="WvN-cP-N8P" secondAttribute="top" constant="24" id="6vC-35-M41"/>
+                            <constraint firstItem="6aK-jY-pQz" firstAttribute="leading" secondItem="WvN-cP-N8P" secondAttribute="leading" constant="24" id="8nw-3q-Pak"/>
+                            <constraint firstItem="WRT-DL-372" firstAttribute="centerX" secondItem="XxN-Q6-tev" secondAttribute="centerX" id="9yk-0C-9sF"/>
+                            <constraint firstItem="31O-28-ohE" firstAttribute="top" secondItem="WRT-DL-372" secondAttribute="bottom" constant="40" id="Akm-fz-Dzw"/>
+                            <constraint firstItem="WRT-DL-372" firstAttribute="top" secondItem="6aK-jY-pQz" secondAttribute="bottom" constant="40" id="Hmn-yt-DwL"/>
+                            <constraint firstItem="31O-28-ohE" firstAttribute="centerX" secondItem="XxN-Q6-tev" secondAttribute="centerX" id="J8y-LI-3pi"/>
+                            <constraint firstItem="cYy-zN-M5P" firstAttribute="centerX" secondItem="XxN-Q6-tev" secondAttribute="centerX" id="ght-He-6XH"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="설정" id="r0V-ep-8wv"/>
+                    <connections>
+                        <outlet property="ledBackGroundColorWell" destination="mSM-FX-foM" id="4P3-U5-k42"/>
+                        <outlet property="ledContentsTextField" destination="SkK-Y1-Y4H" id="N4M-Da-1rm"/>
+                        <outlet property="ledTextColorWell" destination="kCb-OT-Wgi" id="uMn-h8-XNe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Ks-D7-9Rz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="965" y="4"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="0fF-bQ-7TD">
+            <objects>
+                <navigationController id="4ly-U4-w0w" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Kem-Z9-xEN">
+                        <rect key="frame" x="0.0" y="47" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="wcH-28-XKM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JB5-pB-MdG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-909" y="4"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
