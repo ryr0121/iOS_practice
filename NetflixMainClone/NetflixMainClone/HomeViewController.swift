@@ -11,6 +11,7 @@ import SwiftUI
 class HomeViewController: UICollectionViewController {
     
     var contents: [Content] = []    // Content.plist로부터 가져온 데이터를 저장하기 위한 배열
+    var mainItem: Item?
     
     // 맨 처음 뷰가 로딩되면 호출되는 메소드
     override func viewDidLoad() {
@@ -29,10 +30,12 @@ class HomeViewController: UICollectionViewController {
         
         // 데이터 설정, 가져오기
         self.contents = self.getContents()
+        self.mainItem = self.contents.first?.contentItem.randomElement()
         
         // CollectionView의 Item(Cell) 설정, 즉, CollectionView가 어떤 구색을 갖춘 Cell을 포함시킬건지 그 Cell의 정보를 등록
         self.collectionView.register(ContentCollectionViewCell.self, forCellWithReuseIdentifier: "ContentCollectionViewCell")
         self.collectionView.register(ContentCollectionViewRankCell.self, forCellWithReuseIdentifier: "ContentCollectionViewRankCell")
+        self.collectionView.register(ContentCollectionViewMainCell.self, forCellWithReuseIdentifier: "ContentCollectionViewMainCell")
         self.collectionView.register(ContentCollectionViewHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "ContentCollectionViewHeader")   // 헤더 라벨 등록
 
         collectionView.collectionViewLayout = self.layout()
@@ -58,6 +61,8 @@ class HomeViewController: UICollectionViewController {
                 return self.createLargeTypeSection()
             case .rank:
                 return self.createRankTypeSection()
+            case .main:
+                return self.createMainTypeSection()
             default:
                 return nil
             }
@@ -132,6 +137,23 @@ class HomeViewController: UICollectionViewController {
         return section
     }
     
+    // Main section 구성
+    private func createMainTypeSection() -> NSCollectionLayoutSection {
+        // item
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+
+        // group
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(450))
+        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
+        
+        // section
+        let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = .init(top: 0, leading: 0, bottom: 20, trailing: 0)
+
+        return section
+    }
+    
     // SectionHeader Layout 설정
     private func createSectionHeader() -> NSCollectionLayoutBoundarySupplementaryItem {
         let layoutSectionHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(30))
@@ -145,17 +167,12 @@ extension HomeViewController {
     // 섹션 당 보여질 셀의 개수
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // 데이터 구성 형태에 따라 0번째 섹션만 1개의 셀을 가지도록 고정, 그 이후부터의 섹션은 그 안의 contentItem의 개수만큼 셀을 가져야 함
-        if self.contents[section].sectionType == .basic
-            || self.contents[section].sectionType == .large
-            || self.contents[section].sectionType == .rank {
-            switch section {
-            case 0:
-                return 1
-            default:
-                return contents[section].contentItem.count
-            }
+        switch section {
+        case 0:
+            return 1
+        default:
+            return contents[section].contentItem.count
         }
-        return 0
     }
     
     // CollectionView Cell 설정 (CollectionView을 어떤 Cell들로 구성할지, 그 Cell을 반환)
@@ -170,10 +187,13 @@ extension HomeViewController {
         case .rank:
             guard let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "ContentCollectionViewRankCell", for: indexPath) as? ContentCollectionViewRankCell else { return UICollectionViewCell() }
             cell.imageView.image = self.contents[indexPath.section].contentItem[indexPath.row].image
-            return cell
             cell.rankLabel.text = String(describing: indexPath.row + 1)
-        default:
-            return UICollectionViewCell()   // 기본셀 반환으로 임시 처리
+            return cell
+        case .main:
+            guard let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "ContentCollectionViewMainCell", for: indexPath) as? ContentCollectionViewMainCell else { return UICollectionViewCell() }
+            cell.imageView.image = mainItem?.image
+            cell.descriptionLabel.text = mainItem?.description
+            return cell
         }
     }
     
