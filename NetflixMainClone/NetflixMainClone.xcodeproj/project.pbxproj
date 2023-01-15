@@ -17,6 +17,7 @@
 		A28E4AF22971989900B6E045 /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28E4AF12971989900B6E045 /* Content.swift */; };
 		A28E4AF42971A0BC00B6E045 /* ContentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28E4AF32971A0BC00B6E045 /* ContentCollectionViewCell.swift */; };
 		A28E4AF62971A7BF00B6E045 /* ContentCollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28E4AF52971A7BF00B6E045 /* ContentCollectionViewHeader.swift */; };
+		A28E4AF82974478800B6E045 /* ContentCollectionViewRankCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28E4AF72974478800B6E045 /* ContentCollectionViewRankCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		A28E4AF12971989900B6E045 /* Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
 		A28E4AF32971A0BC00B6E045 /* ContentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCollectionViewCell.swift; sourceTree = "<group>"; };
 		A28E4AF52971A7BF00B6E045 /* ContentCollectionViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCollectionViewHeader.swift; sourceTree = "<group>"; };
+		A28E4AF72974478800B6E045 /* ContentCollectionViewRankCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCollectionViewRankCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 				A28E4AEA29718E7100B6E045 /* HomeViewController.swift */,
 				A28E4AF52971A7BF00B6E045 /* ContentCollectionViewHeader.swift */,
 				A28E4AF32971A0BC00B6E045 /* ContentCollectionViewCell.swift */,
+				A28E4AF72974478800B6E045 /* ContentCollectionViewRankCell.swift */,
 			);
 			path = NetflixMainClone;
 			sourceTree = "<group>";
@@ -158,6 +161,7 @@
 				A28E4AD729718DC200B6E045 /* AppDelegate.swift in Sources */,
 				A28E4AF62971A7BF00B6E045 /* ContentCollectionViewHeader.swift in Sources */,
 				A28E4AD929718DC200B6E045 /* SceneDelegate.swift in Sources */,
+				A28E4AF82974478800B6E045 /* ContentCollectionViewRankCell.swift in Sources */,
 				A28E4AEB29718E7100B6E045 /* HomeViewController.swift in Sources */,
 				A28E4AF22971989900B6E045 /* Content.swift in Sources */,
 				A28E4AF42971A0BC00B6E045 /* ContentCollectionViewCell.swift in Sources */,

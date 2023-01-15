@@ -6,6 +6,7 @@
 //
 
 import UIKit    // UI의 핵심 오브젝트를 구성하기 위한 라이브러리 가져오기
+import SwiftUI
 
 class HomeViewController: UICollectionViewController {
     
@@ -14,6 +15,8 @@ class HomeViewController: UICollectionViewController {
     // 맨 처음 뷰가 로딩되면 호출되는 메소드
     override func viewDidLoad() {
         super.viewDidLoad() // 오버라이드라 상위 메소드 우선 호출
+        
+        self.collectionView.backgroundColor = .black
         
         // navigation 설정
         navigationController?.navigationBar.backgroundColor = .clear    // navigationController의 navigationBar의 배경색을 없애줌
@@ -29,8 +32,10 @@ class HomeViewController: UICollectionViewController {
         
         // CollectionView의 Item(Cell) 설정, 즉, CollectionView가 어떤 구색을 갖춘 Cell을 포함시킬건지 그 Cell의 정보를 등록
         self.collectionView.register(ContentCollectionViewCell.self, forCellWithReuseIdentifier: "ContentCollectionViewCell")
+        self.collectionView.register(ContentCollectionViewRankCell.self, forCellWithReuseIdentifier: "ContentCollectionViewRankCell")
         self.collectionView.register(ContentCollectionViewHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "ContentCollectionViewHeader")   // 헤더 라벨 등록
 
+        collectionView.collectionViewLayout = self.layout()
     }
     
     func getContents() -> [Content] {
@@ -40,6 +45,99 @@ class HomeViewController: UICollectionViewController {
               let list = try? PropertyListDecoder().decode([Content].self, from: data) else { return [] }   // PropertyListDecoder를 통해, 위에서 가져온 data를 'Content 배열' 타입으로 decode해줌
         return list
     }
+    
+    // 각 섹션의 타입에 따라 UICollectionViewLayout 설정
+    private func layout() -> UICollectionViewLayout {
+        return UICollectionViewCompositionalLayout {[weak self] sectionNumber, environment -> NSCollectionLayoutSection? in
+            guard let self = self else { return nil }
+            
+            switch self.contents[sectionNumber].sectionType {
+            case .basic:
+                return self.createBasicTypeSection()
+            case .large:
+                return self.createLargeTypeSection()
+            case .rank:
+                return self.createRankTypeSection()
+            default:
+                return nil
+            }
+        }
+    }
+    
+    // basic 타입의 section 구성
+    private func createBasicTypeSection() -> NSCollectionLayoutSection {
+        // item
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.3), heightDimension: .fractionalHeight(0.75))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        item.contentInsets = .init(top: 10, leading: 5, bottom: 0, trailing: 5)
+        
+        // group
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.9), heightDimension: .estimated(200))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 3)
+        
+        // section
+        let section = NSCollectionLayoutSection(group: group)
+        section.orthogonalScrollingBehavior = .continuous
+        section.contentInsets = .init(top: 0, leading: 5, bottom: 0, trailing: 5)
+        
+        let sectionHeader = self.createSectionHeader()
+        section.boundarySupplementaryItems = [sectionHeader]
+        
+        return section
+    }
+    
+    // large 타입의 section 구성
+    private func createLargeTypeSection() -> NSCollectionLayoutSection {
+        // item
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.3), heightDimension: .fractionalHeight(0.75))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        item.contentInsets = .init(top: 10, leading: 5, bottom: 0, trailing: 5)
+        
+        // group
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.9), heightDimension: .estimated(400))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 2)
+        
+        // section
+        let section = NSCollectionLayoutSection(group: group)
+        section.orthogonalScrollingBehavior = .continuous
+        section.contentInsets = .init(top: 0, leading: 5, bottom: 0, trailing: 5)
+        
+        // header 설정
+        let sectionHeader = self.createSectionHeader()
+        section.boundarySupplementaryItems = [sectionHeader]
+        
+        return section
+    }
+    
+    // large 타입의 section 구성
+    private func createRankTypeSection() -> NSCollectionLayoutSection {
+        // item
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.3), heightDimension: .fractionalHeight(0.9))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        item.contentInsets = .init(top: 10, leading: 5, bottom: 0, trailing: 5)
+        
+        // group
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.9), heightDimension: .estimated(250))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 2)
+        
+        // section
+        let section = NSCollectionLayoutSection(group: group)
+        section.orthogonalScrollingBehavior = .continuous
+        section.contentInsets = .init(top: 0, leading: 5, bottom: 0, trailing: 5)
+        
+        // header 설정
+        let sectionHeader = self.createSectionHeader()
+        section.boundarySupplementaryItems = [sectionHeader]
+        
+        return section
+    }
+    
+    // SectionHeader Layout 설정
+    private func createSectionHeader() -> NSCollectionLayoutBoundarySupplementaryItem {
+        let layoutSectionHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(30))
+        let layoutSectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: layoutSectionHeaderSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
+        return layoutSectionHeader
+    }
 }
 
 // UICollectionView DataSource, Delegate 설정
@@ -47,12 +145,17 @@ extension HomeViewController {
     // 섹션 당 보여질 셀의 개수
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // 데이터 구성 형태에 따라 0번째 섹션만 1개의 셀을 가지도록 고정, 그 이후부터의 섹션은 그 안의 contentItem의 개수만큼 셀을 가져야 함
-        switch section {
-        case 0:
-            return 1
-        default:
-            return contents[section].contentItem.count
+        if self.contents[section].sectionType == .basic
+            || self.contents[section].sectionType == .large
+            || self.contents[section].sectionType == .rank {
+            switch section {
+            case 0:
+                return 1
+            default:
+                return contents[section].contentItem.count
+            }
         }
+        return 0
     }
     
     // CollectionView Cell 설정 (CollectionView을 어떤 Cell들로 구성할지, 그 Cell을 반환)
@@ -64,6 +167,11 @@ extension HomeViewController {
                 // dequeueReusableCell은 withReuseIdentifier로 전달되는 문자열값과 같은 이름의 셀 클래스를 찾아서 반환해주는 메소드?? , 반환할 셀을 못찾으면 기본 UICollectionViewCell을 반환
             cell.imageView.image = self.contents[indexPath.section].contentItem[indexPath.row].image    // contents 배열 내에서 indexPath를 사용하여 해당 위치의 image데이터를 가지고 imageView의 이미지로 포함시킴
             return cell // 위에서 가지고 와서 설정한 Cell을 반환
+        case .rank:
+            guard let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "ContentCollectionViewRankCell", for: indexPath) as? ContentCollectionViewRankCell else { return UICollectionViewCell() }
+            cell.imageView.image = self.contents[indexPath.section].contentItem[indexPath.row].image
+            return cell
+            cell.rankLabel.text = String(describing: indexPath.row + 1)
         default:
             return UICollectionViewCell()   // 기본셀 반환으로 임시 처리
         }
@@ -94,4 +202,25 @@ extension HomeViewController {
         let selectedItemName = contents[indexPath.row].sectionName
         print("TEST :: \(selectedItemName)섹션의 \(indexPath.row + 1)번째 컨텐츠가 선택됨")
     }
+}
+
+
+// SwiftUI를 활용한 미리보기
+struct HomeViewController_Priview: PreviewProvider {
+    static var previews: some View {
+        Container().edgesIgnoringSafeArea(.all)
+    }
+    
+    struct Container: UIViewControllerRepresentable {
+        func updateUIViewController(_ uiViewController: UIViewController, context: Context) {}
+        
+        func makeUIViewController(context: Context) -> UIViewController {
+            let layout = UICollectionViewLayout()
+            let homeViewController = HomeViewController(collectionViewLayout: layout)
+            return UINavigationController(rootViewController: homeViewController)
+        }
+        
+        typealias UIViewControllerType = UIViewController
+    }
+    
 }
