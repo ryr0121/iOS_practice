@@ -54,8 +54,6 @@ class TodayCollectionViewCell: UICollectionViewCell {
         descriptionLabel.text = "설명 라벨"
         titleLabel.text = "타이틀 라벨"
         
-        imageView.backgroundColor = .blue
-
 //        if let imageURL = URL(string: today.imageURL) {
 //            imageView.kf.setImage(with: imageURL)
 //        }

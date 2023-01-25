@@ -14,6 +14,7 @@
 		A202D8F32978C74600667714 /* StationResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A202D8F22978C74600667714 /* StationResponseModel.swift */; };
 		A202D8F72978D47800667714 /* StationArrivalResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A202D8F62978D47800667714 /* StationArrivalResponseModel.swift */; };
 		A202D8FD2978E62700667714 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A202D8FC2978E62700667714 /* SearchTableViewCell.swift */; };
+		A22C538029790F7D005E0500 /* testTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22C537F29790F7D005E0500 /* testTableViewCell.swift */; };
 		A2F633052977C290003EC2A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F633042977C290003EC2A2 /* AppDelegate.swift */; };
 		A2F633072977C290003EC2A2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F633062977C290003EC2A2 /* SceneDelegate.swift */; };
 		A2F633092977C290003EC2A2 /* SubwaySearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F633082977C290003EC2A2 /* SubwaySearchViewController.swift */; };
@@ -27,6 +28,7 @@
 		A202D8F22978C74600667714 /* StationResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationResponseModel.swift; sourceTree = "<group>"; };
 		A202D8F62978D47800667714 /* StationArrivalResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationArrivalResponseModel.swift; sourceTree = "<group>"; };
 		A202D8FC2978E62700667714 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		A22C537F29790F7D005E0500 /* testTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testTableViewCell.swift; sourceTree = "<group>"; };
 		A2F633012977C290003EC2A2 /* SubwayStation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SubwayStation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2F633042977C290003EC2A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2F633062977C290003EC2A2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				A2F633082977C290003EC2A2 /* SubwaySearchViewController.swift */,
+				A22C537F29790F7D005E0500 /* testTableViewCell.swift */,
 				A202D8EE2978B7AB00667714 /* StationDetailViewController.swift */,
 				A202D8F02978BCB600667714 /* StationDetailColloctionViewCell.swift */,
 				A202D8FC2978E62700667714 /* SearchTableViewCell.swift */,
@@ -181,6 +184,7 @@
 				A202D8F32978C74600667714 /* StationResponseModel.swift in Sources */,
 				A202D8F12978BCB600667714 /* StationDetailColloctionViewCell.swift in Sources */,
 				A2F633092977C290003EC2A2 /* SubwaySearchViewController.swift in Sources */,
+				A22C538029790F7D005E0500 /* testTableViewCell.swift in Sources */,
 				A202D8F72978D47800667714 /* StationArrivalResponseModel.swift in Sources */,
 				A202D8FD2978E62700667714 /* SearchTableViewCell.swift in Sources */,
 				A2F633052977C290003EC2A2 /* AppDelegate.swift in Sources */,
