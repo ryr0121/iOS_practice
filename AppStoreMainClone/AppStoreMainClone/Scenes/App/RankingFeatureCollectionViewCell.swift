@@ -59,12 +59,12 @@ class RankingFeatureCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    func setup() {
+    func setup(rankingFeature: RankingFeature) {
         setupLayout()
 
-        titleLabel.text = "title"
-        descriptionLabel.text = "description"
-        inAppPurchaseInfoLabel.isHidden = false
+        titleLabel.text = rankingFeature.title
+        descriptionLabel.text = rankingFeature.description
+        inAppPurchaseInfoLabel.isHidden = !rankingFeature.isInPurchaseApp
     }
 }
 

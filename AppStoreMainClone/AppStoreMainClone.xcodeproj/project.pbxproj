@@ -7,12 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A24349492981E49500F60D1A /* AppDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24349482981E49500F60D1A /* AppDetailViewController.swift */; };
 		A2E46C192980A7FA009C9510 /* FeatureSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E46C182980A7FA009C9510 /* FeatureSectionView.swift */; };
 		A2E46C1B2980A821009C9510 /* RankingFeatureSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E46C1A2980A821009C9510 /* RankingFeatureSectionView.swift */; };
 		A2E46C1D2980A83F009C9510 /* ExchangeCodeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E46C1C2980A83F009C9510 /* ExchangeCodeButtonView.swift */; };
 		A2E46C1F2980A89F009C9510 /* FeatureSectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E46C1E2980A89F009C9510 /* FeatureSectionCollectionViewCell.swift */; };
 		A2E46C212980A8C8009C9510 /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E46C202980A8C8009C9510 /* SeparatorView.swift */; };
 		A2E46C232980AD0A009C9510 /* RankingFeatureCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E46C222980AD0A009C9510 /* RankingFeatureCollectionViewCell.swift */; };
+		A2E46C272980B11C009C9510 /* Today.plist in Resources */ = {isa = PBXBuildFile; fileRef = A2E46C242980B11B009C9510 /* Today.plist */; };
+		A2E46C282980B11C009C9510 /* RankingFeature.plist in Resources */ = {isa = PBXBuildFile; fileRef = A2E46C252980B11B009C9510 /* RankingFeature.plist */; };
+		A2E46C292980B11C009C9510 /* Feature.plist in Resources */ = {isa = PBXBuildFile; fileRef = A2E46C262980B11C009C9510 /* Feature.plist */; };
+		A2E46C2C2980B6D3009C9510 /* Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E46C2B2980B6D3009C9510 /* Feature.swift */; };
+		A2E46C2E2980B6E4009C9510 /* RankingFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E46C2D2980B6E4009C9510 /* RankingFeature.swift */; };
 		A2F632BD29764FE4003EC2A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F632BC29764FE4003EC2A2 /* AppDelegate.swift */; };
 		A2F632BF29764FE4003EC2A2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F632BE29764FE4003EC2A2 /* SceneDelegate.swift */; };
 		A2F632C629764FE5003EC2A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2F632C529764FE5003EC2A2 /* Assets.xcassets */; };
@@ -28,12 +34,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A24349482981E49500F60D1A /* AppDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailViewController.swift; sourceTree = "<group>"; };
 		A2E46C182980A7FA009C9510 /* FeatureSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureSectionView.swift; sourceTree = "<group>"; };
 		A2E46C1A2980A821009C9510 /* RankingFeatureSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingFeatureSectionView.swift; sourceTree = "<group>"; };
 		A2E46C1C2980A83F009C9510 /* ExchangeCodeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeCodeButtonView.swift; sourceTree = "<group>"; };
 		A2E46C1E2980A89F009C9510 /* FeatureSectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureSectionCollectionViewCell.swift; sourceTree = "<group>"; };
 		A2E46C202980A8C8009C9510 /* SeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
 		A2E46C222980AD0A009C9510 /* RankingFeatureCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingFeatureCollectionViewCell.swift; sourceTree = "<group>"; };
+		A2E46C242980B11B009C9510 /* Today.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Today.plist; sourceTree = "<group>"; };
+		A2E46C252980B11B009C9510 /* RankingFeature.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = RankingFeature.plist; sourceTree = "<group>"; };
+		A2E46C262980B11C009C9510 /* Feature.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Feature.plist; sourceTree = "<group>"; };
+		A2E46C2B2980B6D3009C9510 /* Feature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feature.swift; sourceTree = "<group>"; };
+		A2E46C2D2980B6E4009C9510 /* RankingFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingFeature.swift; sourceTree = "<group>"; };
 		A2F632B929764FE4003EC2A2 /* AppStoreMainClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppStoreMainClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2F632BC29764FE4003EC2A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2F632BE29764FE4003EC2A2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +73,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A2E46C2A2980B126009C9510 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				A2E46C242980B11B009C9510 /* Today.plist */,
+				A2E46C262980B11C009C9510 /* Feature.plist */,
+				A2E46C252980B11B009C9510 /* RankingFeature.plist */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		A2F632B029764FE4003EC2A2 = {
 			isa = PBXGroup;
 			children = (
@@ -83,7 +105,10 @@
 				A2F632BC29764FE4003EC2A2 /* AppDelegate.swift */,
 				A2F632BE29764FE4003EC2A2 /* SceneDelegate.swift */,
 				A2F632E529766754003EC2A2 /* Today.swift */,
+				A2E46C2B2980B6D3009C9510 /* Feature.swift */,
+				A2E46C2D2980B6E4009C9510 /* RankingFeature.swift */,
 				A2F632E0297665A2003EC2A2 /* Scenes */,
+				A2E46C2A2980B126009C9510 /* Data */,
 				A2F632C529764FE5003EC2A2 /* Assets.xcassets */,
 				A2F632C729764FE5003EC2A2 /* LaunchScreen.storyboard */,
 				A2F632CA29764FE5003EC2A2 /* Info.plist */,
@@ -97,6 +122,7 @@
 				A2F632F329766FA7003EC2A2 /* App */,
 				A2F632F029766F90003EC2A2 /* Today */,
 				A2F632D62976522C003EC2A2 /* TabBarController.swift */,
+				A24349482981E49500F60D1A /* AppDetailViewController.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -191,7 +217,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2E46C282980B11C009C9510 /* RankingFeature.plist in Resources */,
 				A2F632C929764FE5003EC2A2 /* LaunchScreen.storyboard in Resources */,
+				A2E46C292980B11C009C9510 /* Feature.plist in Resources */,
+				A2E46C272980B11C009C9510 /* Today.plist in Resources */,
 				A2F632C629764FE5003EC2A2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -208,6 +237,7 @@
 				A2F632D72976522C003EC2A2 /* TabBarController.swift in Sources */,
 				A2E46C192980A7FA009C9510 /* FeatureSectionView.swift in Sources */,
 				A2F632BD29764FE4003EC2A2 /* AppDelegate.swift in Sources */,
+				A2E46C2E2980B6E4009C9510 /* RankingFeature.swift in Sources */,
 				A2E46C1B2980A821009C9510 /* RankingFeatureSectionView.swift in Sources */,
 				A2E46C1F2980A89F009C9510 /* FeatureSectionCollectionViewCell.swift in Sources */,
 				A2F632F229766FA3003EC2A2 /* AppViewController.swift in Sources */,
@@ -215,6 +245,8 @@
 				A2F632E4297666D7003EC2A2 /* TodayCollectionHeaderView.swift in Sources */,
 				A2F632BF29764FE4003EC2A2 /* SceneDelegate.swift in Sources */,
 				A2F632E629766754003EC2A2 /* Today.swift in Sources */,
+				A24349492981E49500F60D1A /* AppDetailViewController.swift in Sources */,
+				A2E46C2C2980B6D3009C9510 /* Feature.swift in Sources */,
 				A2E46C232980AD0A009C9510 /* RankingFeatureCollectionViewCell.swift in Sources */,
 				A2F632E2297666C0003EC2A2 /* TodayCollectionViewCell.swift in Sources */,
 			);

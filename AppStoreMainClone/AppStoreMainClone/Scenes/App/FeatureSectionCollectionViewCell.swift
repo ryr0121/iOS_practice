@@ -7,6 +7,7 @@
 
 import SnapKit
 import UIKit
+import Kingfisher
 
 class FeatureSectionCollectionViewCell: UICollectionViewCell {
     
@@ -47,13 +48,16 @@ class FeatureSectionCollectionViewCell: UICollectionViewCell {
         return imageView
     }()
 
-    func setup() {
+    func setup(feature: Feature) {
         setupLayout()
 
-        typeLabel.text = "app type"
-        appNameLabel.text = "app name"
-        descriptionLabel.text = "description"
+        typeLabel.text = feature.type
+        appNameLabel.text = feature.appName
+        descriptionLabel.text = feature.description
 
+        if let imageURL = URL(string: feature.imageURL) {
+            imageView.kf.setImage(with: imageURL)
+        }
     }
 }
 
