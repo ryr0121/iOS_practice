@@ -9,20 +9,26 @@
 /* Begin PBXBuildFile section */
 		A202D90B2978FCD500667714 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A202D90A2978FCD500667714 /* AppDelegate.swift */; };
 		A202D90D2978FCD500667714 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A202D90C2978FCD500667714 /* SceneDelegate.swift */; };
-		A202D90F2978FCD500667714 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A202D90E2978FCD500667714 /* ViewController.swift */; };
+		A202D90F2978FCD500667714 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A202D90E2978FCD500667714 /* TabBarController.swift */; };
 		A202D9142978FCD600667714 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A202D9132978FCD600667714 /* Assets.xcassets */; };
 		A202D9172978FCD600667714 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A202D9152978FCD600667714 /* LaunchScreen.storyboard */; };
 		A202D9202978FD0800667714 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = A202D91F2978FD0800667714 /* SnapKit */; };
+		A243494B2981F0C100F60D1A /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A243494A2981F0C100F60D1A /* FeedViewController.swift */; };
+		A243494D2981F0F400F60D1A /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A243494C2981F0F400F60D1A /* FeedTableViewCell.swift */; };
+		A24349502981F24700F60D1A /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A243494F2981F24700F60D1A /* UIButton+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A202D9072978FCD500667714 /* InstagramClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A202D90A2978FCD500667714 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A202D90C2978FCD500667714 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A202D90E2978FCD500667714 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A202D90E2978FCD500667714 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		A202D9132978FCD600667714 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A202D9162978FCD600667714 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A202D9182978FCD600667714 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A243494A2981F0C100F60D1A /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		A243494C2981F0F400F60D1A /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
+		A243494F2981F24700F60D1A /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,12 +64,23 @@
 			children = (
 				A202D90A2978FCD500667714 /* AppDelegate.swift */,
 				A202D90C2978FCD500667714 /* SceneDelegate.swift */,
-				A202D90E2978FCD500667714 /* ViewController.swift */,
+				A243494F2981F24700F60D1A /* UIButton+.swift */,
+				A243494E2981F13F00F60D1A /* Scenes */,
 				A202D9132978FCD600667714 /* Assets.xcassets */,
 				A202D9152978FCD600667714 /* LaunchScreen.storyboard */,
 				A202D9182978FCD600667714 /* Info.plist */,
 			);
 			path = InstagramClone;
+			sourceTree = "<group>";
+		};
+		A243494E2981F13F00F60D1A /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				A202D90E2978FCD500667714 /* TabBarController.swift */,
+				A243494A2981F0C100F60D1A /* FeedViewController.swift */,
+				A243494C2981F0F400F60D1A /* FeedTableViewCell.swift */,
+			);
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,9 +159,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A202D90F2978FCD500667714 /* ViewController.swift in Sources */,
+				A202D90F2978FCD500667714 /* TabBarController.swift in Sources */,
+				A24349502981F24700F60D1A /* UIButton+.swift in Sources */,
 				A202D90B2978FCD500667714 /* AppDelegate.swift in Sources */,
+				A243494B2981F0C100F60D1A /* FeedViewController.swift in Sources */,
 				A202D90D2978FCD500667714 /* SceneDelegate.swift in Sources */,
+				A243494D2981F0F400F60D1A /* FeedTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
